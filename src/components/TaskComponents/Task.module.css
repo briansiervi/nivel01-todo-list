@@ -1,0 +1,7 @@
+.line {
+  display: flex;
+  flex: 3 var(--task-line-width);
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+}

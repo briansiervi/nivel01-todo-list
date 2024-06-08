@@ -1,5 +1,0 @@
-.line {
-  display: flex;
-  flex: 1 var(--task-line-width);
-  flex-wrap: wrap;
-}

@@ -1,4 +1,4 @@
-import { Task } from "./Task";
+import { Task } from "../TaskComponents/Task";
 import styles from "./TaskListBody.module.css";
 
 export function TaskListBody() {

@@ -13,6 +13,9 @@
   --danger: #e25858;
 
   --task-line-width: 46rem;
+  --text-large: 1rem;
+  --text-medium: 0.875rem;
+  --text-small: 0.75rem;
 }
 
 * {
