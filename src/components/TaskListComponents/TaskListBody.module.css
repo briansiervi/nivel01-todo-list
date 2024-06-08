@@ -1,7 +1,6 @@
 .line {
   display: flex;
-  flex: 1 100px;
+  flex: 1;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: flex-start;
 }

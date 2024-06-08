@@ -1,5 +1,5 @@
 .wrapper {
-  max-width: 46rem;
+  max-width: var(--task-line-width);
   margin: auto;
   display: grid;
   align-items: center;

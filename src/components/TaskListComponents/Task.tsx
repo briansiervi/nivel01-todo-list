@@ -1,3 +1,5 @@
+import styles from "./Task.module.css";
+
 export function Task() {
-  return <span>Tarefa</span>;
+  return <span className={styles.line}>Tarefa</span>;
 }

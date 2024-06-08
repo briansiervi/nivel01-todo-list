@@ -1,4 +1,5 @@
 .align {
   display: flex;
   justify-content: space-between;
+  flex: 2 var(--task-line-width);
 }
