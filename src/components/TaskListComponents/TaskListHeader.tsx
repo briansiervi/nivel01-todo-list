@@ -5,11 +5,7 @@ export function TaskListHeader() {
   return (
     <div className={styles.align}>
       <TaskListTitle title="Tarefas criadas" totalNumber={5} />
-      <TaskListTitle
-        title="Tarefas concluídas"
-        currentNumber={2}
-        totalNumber={5}
-      />
+      <TaskListTitle title="Concluídas" currentNumber={2} totalNumber={5} />
     </div>
   );
 }

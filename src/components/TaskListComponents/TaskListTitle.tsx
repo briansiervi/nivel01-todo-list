@@ -8,7 +8,7 @@ interface TaskTitleProps {
 
 export function TaskListTitle(props: TaskTitleProps) {
   return (
-    <>
+    <div>
       <span
         className={
           props.currentNumber === undefined
@@ -29,6 +29,6 @@ export function TaskListTitle(props: TaskTitleProps) {
           <span>{props.totalNumber}</span>
         </button>
       )}
-    </>
+    </div>
   );
 }

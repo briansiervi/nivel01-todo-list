@@ -1,5 +1,5 @@
 .align {
-  display: block;
+  display: flex;
 }
 
 button {
@@ -10,16 +10,19 @@ button {
   margin-left: 0.5rem;
   padding: 0.125rem 0.5rem;
   border: 0;
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   font-weight: bold;
+  font-size: 0.75rem;
 }
 
 .principal {
   color: var(--blue);
   font-weight: bold;
+  font-size: 0.875rem;
 }
 
 .secundary {
   color: var(--purple);
   font-weight: bold;
+  font-size: 0.875rem;
 }
