@@ -1,0 +1,6 @@
+.button {
+  background-color: var(--blue);
+  width: 5.625rem;
+  height: 3.25rem;
+  border-radius: 8px;
+}
