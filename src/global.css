@@ -12,11 +12,12 @@
   --gray-700: #0d0d0d;
   --danger: #e25858;
 
-  font-size: 62.5%;
   --task-line-width: 73.6rem;
-  --text-large: 1.6rem;
-  --text-medium: 1.4rem;
-  --text-small: 1.2rem;
+
+  font-size: 62.5%;
+  --font-size-large: 1.6rem;
+  --font-size-medium: 1.4rem;
+  --font-size-small: 1.2rem;
 }
 
 * {
@@ -38,7 +39,7 @@ textarea,
 button {
   font-family: "Inter", sans-serif;
   font-weight: 400;
-  font-size: var(--text-large);
+  font-size: var(--font-size-large);
   line-height: 140%;
 }
 

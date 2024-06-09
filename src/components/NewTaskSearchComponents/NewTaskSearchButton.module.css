@@ -13,8 +13,7 @@
 }
 
 .button span {
-  padding-right: 0.8rem;
-  font-size: var(--text-medium);
+  font-size: var(--font-size-medium);
 }
 
 .button .plusCircle {

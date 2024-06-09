@@ -1,16 +1,6 @@
 .wrapper {
-  max-width: var(--task-line-width);
+  width: min(var(--task-line-width), 90%);
   margin: auto;
   display: grid;
   align-items: center;
-}
-
-@media (max-width: 76.8rem) {
-  html {
-    font-size: var(--text-medium); /* = (14px/16px) */
-  }
-
-  .wrapper {
-    grid-template-columns: 1fr;
-  }
 }

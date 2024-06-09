@@ -1,5 +1,5 @@
 .text {
   display: flex;
   flex: 1;
-  font-size: var(--text-medium);
+  font-size: var(--font-size-medium);
 }
