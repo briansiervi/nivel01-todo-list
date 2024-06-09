@@ -1,5 +1,14 @@
+import { LabelHTMLAttributes } from "react";
 import styles from "./TaskText.module.css";
 
-export function TaskText() {
-  return <span className={styles.text}>Tarefa</span>;
+interface TaskTextProps extends LabelHTMLAttributes<HTMLLabelElement> {
+  description: string;
+}
+
+export function TaskText(props: TaskTextProps) {
+  return (
+    <label className={styles.text} {...props}>
+      {props.description}
+    </label>
+  );
 }

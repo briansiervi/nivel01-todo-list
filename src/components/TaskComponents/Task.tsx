@@ -3,11 +3,16 @@ import { TaskCheckBox } from "./TaskCheckBox";
 import { TaskText } from "./TaskText";
 import { TaskTrash } from "./TaskTrash";
 
-export function Task() {
+interface TaskProps {
+  name: string;
+  description: string;
+}
+
+export function Task(props: TaskProps) {
   return (
     <div className={styles.line}>
-      <TaskCheckBox />
-      <TaskText />
+      <TaskCheckBox name={props.name} />
+      <TaskText htmlFor={props.name} description={props.description} />
       <TaskTrash />
     </div>
   );
