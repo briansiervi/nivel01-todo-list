@@ -1,11 +1,11 @@
 import { LabelHTMLAttributes } from "react";
-import styles from "./TaskText.module.css";
+import styles from "./TaskLabel.module.css";
 
-interface TaskTextProps extends LabelHTMLAttributes<HTMLLabelElement> {
+interface TaskLabelProps extends LabelHTMLAttributes<HTMLLabelElement> {
   description: string;
 }
 
-export function TaskText(props: TaskTextProps) {
+export function TaskLabel(props: TaskLabelProps) {
   return (
     <label className={styles.text} {...props}>
       {props.description}
