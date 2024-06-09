@@ -12,16 +12,18 @@
   --gray-700: #0d0d0d;
   --danger: #e25858;
 
-  --task-line-width: 46rem;
-  --text-large: 1rem;
-  --text-medium: 0.875rem;
-  --text-small: 0.75rem;
+  font-size: 62.5%;
+  --task-line-width: 73.6rem;
+  --text-large: 1.6rem;
+  --text-medium: 1.4rem;
+  --text-small: 1.2rem;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-size: 1.6rem;
 }
 
 body {
@@ -36,7 +38,7 @@ textarea,
 button {
   font-family: "Inter", sans-serif;
   font-weight: 400;
-  font-size: 1rem;
+  font-size: var(--text-large);
   line-height: 140%;
 }
 

@@ -1,7 +1,7 @@
 .newTaskInput {
   background: var(--gray-800);
-  border-radius: 8px;
+  border-radius: 0.8rem;
   padding: 0;
-  width: 39.875rem;
-  height: 3.375rem;
+  width: 63.8rem;
+  height: 5.4rem;
 }

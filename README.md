@@ -9,3 +9,4 @@
 # Documentação complementar
 
 - [FlexBox](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox)
+- [Input customizado + medidas relativas](https://www.youtube.com/watch?v=ksZqb-Qow5E&ab_channel=Rocketseat)

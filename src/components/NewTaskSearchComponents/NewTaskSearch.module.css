@@ -1,6 +1,6 @@
 .newTaskSearch {
   display: flex;
   justify-content: space-between;
-  margin-top: calc(0px - 1rem - 11px);
+  margin-top: calc(0px - 2rem - 7px);
   padding: 0;
 }

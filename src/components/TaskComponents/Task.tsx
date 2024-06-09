@@ -11,7 +11,7 @@ interface TaskProps {
 export function Task(props: TaskProps) {
   return (
     <div className={styles.line}>
-      <TaskCheckBox id={props.id} />
+      <TaskCheckBox id={props.id} value={props.id} />
       <TaskLabel htmlFor={props.id} description={props.description} />
       <TaskTrash />
     </div>
