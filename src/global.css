@@ -1,3 +1,10 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 1.6rem;
+}
+
 :root {
   --blue: #4ea8de;
   --blue-dark: #1e6f9f;
@@ -18,13 +25,6 @@
   --font-size-large: 1.6rem;
   --font-size-medium: 1.4rem;
   --font-size-small: 1.2rem;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-size: 1.6rem;
 }
 
 body {
