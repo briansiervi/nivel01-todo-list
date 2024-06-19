@@ -1,6 +1,24 @@
 import { InputHTMLAttributes } from "react";
 import styles from "./TaskCheckBox.module.css";
 
-export function TaskCheckBox(props: InputHTMLAttributes<HTMLInputElement>) {
-  return <input type="checkbox" className={styles.taskCheck} {...props} />;
+interface TaskCheckBoxProps extends InputHTMLAttributes<HTMLInputElement> {
+  id: string;
+  value: string;
+  onDeleteTask: (taskId: string) => void;
+}
+
+export function TaskCheckBox(props: TaskCheckBoxProps) {
+  function handleDeleteTask() {
+    console.log("handleDeleteTask");
+    props.onDeleteTask(props.id);
+  }
+
+  return (
+    <input
+      type="checkbox"
+      className={styles.taskCheck}
+      {...props}
+      onClick={handleDeleteTask}
+    />
+  );
 }

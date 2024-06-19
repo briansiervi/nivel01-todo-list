@@ -4,3 +4,8 @@
   font-size: var(--font-size-medium);
   margin: 0 var(--font-size-small);
 }
+
+input.taskCheck + label.text {
+  background-color: red;
+  text-decoration: line-through;
+}
