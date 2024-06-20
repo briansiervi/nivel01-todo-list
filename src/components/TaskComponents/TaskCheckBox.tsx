@@ -9,7 +9,6 @@ interface TaskCheckBoxProps extends InputHTMLAttributes<HTMLInputElement> {
 
 export function TaskCheckBox(props: TaskCheckBoxProps) {
   function handleDeleteTask() {
-    console.log("handleDeleteTask");
     props.onDeleteTask(props.id);
   }
 

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styles from "./Task.module.css";
 import { TaskCheckBox } from "./TaskCheckBox";
 import { TaskLabel } from "./TaskLabel";
@@ -10,20 +11,30 @@ export interface TaskProps {
 }
 
 export function Task(props: TaskProps) {
-  function deleteTask(id: string) {
-    console.log("deleteTask");
+  const [isLineCrossedOut, setCrossedOut] = useState(false);
+
+  function handleDeleteTask(id: string) {
+    setCrossedOut(!isLineCrossedOut);
   }
+
+  const taskCheckBoxId = uuidv4();
 
   return (
     <div className={styles.line}>
-      <div className={styles["line-internal"]}>
+      <div
+        className={
+          isLineCrossedOut
+            ? styles["inner-line-crossed-out"]
+            : styles["inner-line"]
+        }
+      >
         <TaskCheckBox
-          id={uuidv4()}
+          id={taskCheckBoxId}
           value={props.description}
-          onDeleteTask={deleteTask}
+          onDeleteTask={handleDeleteTask}
         />
         <TaskLabel
-          htmlFor={uuidv4()}
+          htmlFor={taskCheckBoxId}
           id={props.id}
           description={props.description}
         />

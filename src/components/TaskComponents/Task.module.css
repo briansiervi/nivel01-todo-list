@@ -10,11 +10,21 @@
   min-height: 7.2rem;
 }
 
-.line-internal {
+.inner-line {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   justify-content: space-between;
   align-items: center;
   margin: 1.6rem;
+}
+
+.inner-line-crossed-out {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1.6rem;
+  text-decoration: line-through;
 }
