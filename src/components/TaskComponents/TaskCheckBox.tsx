@@ -4,20 +4,25 @@ import styles from "./TaskCheckBox.module.css";
 interface TaskCheckBoxProps extends InputHTMLAttributes<HTMLInputElement> {
   id: string;
   value: string;
-  onDeleteTask: (taskId: string) => void;
+  onCrossOutTask: () => void;
 }
 
-export function TaskCheckBox(props: TaskCheckBoxProps) {
-  function handleDeleteTask() {
-    props.onDeleteTask(props.id);
+export function TaskCheckBox({
+  id,
+  value,
+  onCrossOutTask,
+  ...props
+}: TaskCheckBoxProps) {
+  function handleCrossOutTask() {
+    onCrossOutTask();
   }
 
   return (
     <input
       type="checkbox"
       className={styles.taskCheck}
+      onClick={handleCrossOutTask}
       {...props}
-      onClick={handleDeleteTask}
     />
   );
 }

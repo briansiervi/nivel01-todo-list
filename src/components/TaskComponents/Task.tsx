@@ -13,7 +13,8 @@ export interface TaskProps {
 export function Task(props: TaskProps) {
   const [isLineCrossedOut, setCrossedOut] = useState(false);
 
-  function handleDeleteTask(id: string) {
+  function crossOutTask() {
+    console.log(event);
     setCrossedOut(!isLineCrossedOut);
   }
 
@@ -31,12 +32,13 @@ export function Task(props: TaskProps) {
         <TaskCheckBox
           id={taskCheckBoxId}
           value={props.description}
-          onDeleteTask={handleDeleteTask}
+          onCrossOutTask={crossOutTask}
         />
         <TaskLabel
           htmlFor={taskCheckBoxId}
           id={props.id}
           description={props.description}
+          onCrossOutTask={crossOutTask}
         />
         <TaskTrash />
       </div>
