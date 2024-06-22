@@ -5,7 +5,6 @@
   margin: 0 var(--font-size-small);
 }
 
-input.taskCheck + label.text {
-  background-color: red;
+.inner-line-crossed-out {
   text-decoration: line-through;
 }

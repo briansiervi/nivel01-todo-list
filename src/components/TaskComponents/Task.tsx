@@ -11,36 +11,37 @@ export interface TaskProps {
 }
 
 export function Task(props: TaskProps) {
-  const [isLineCrossedOut, setCrossedOut] = useState(false);
+  const [isTaskCrossedOut, setCrossOutTask] = useState(false);
+  const [isTaskDeleted, setDeleteTask] = useState(false);
 
   function crossOutTask() {
-    console.log(event);
-    setCrossedOut(!isLineCrossedOut);
+    setCrossOutTask(!isTaskCrossedOut);
+  }
+
+  function deleteTask() {
+    console.log("deleteTask");
+    setDeleteTask(!isTaskDeleted);
   }
 
   const taskCheckBoxId = uuidv4();
 
   return (
     <div className={styles.line}>
-      <div
-        className={
-          isLineCrossedOut
-            ? styles["inner-line-crossed-out"]
-            : styles["inner-line"]
-        }
-      >
+      <div className={styles["inner-line"]}>
         <TaskCheckBox
           id={taskCheckBoxId}
           value={props.description}
           onCrossOutTask={crossOutTask}
+          isTaskCrossedOut={isTaskCrossedOut}
         />
         <TaskLabel
           htmlFor={taskCheckBoxId}
           id={props.id}
           description={props.description}
           onCrossOutTask={crossOutTask}
+          isTaskCrossedOut={isTaskCrossedOut}
         />
-        <TaskTrash />
+        <TaskTrash onDeleteTask={deleteTask} />
       </div>
     </div>
   );

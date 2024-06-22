@@ -5,12 +5,14 @@ interface TaskCheckBoxProps extends InputHTMLAttributes<HTMLInputElement> {
   id: string;
   value: string;
   onCrossOutTask: () => void;
+  isTaskCrossedOut: boolean;
 }
 
 export function TaskCheckBox({
   id,
   value,
   onCrossOutTask,
+  isTaskCrossedOut,
   ...props
 }: TaskCheckBoxProps) {
   function handleCrossOutTask() {
@@ -20,7 +22,11 @@ export function TaskCheckBox({
   return (
     <input
       type="checkbox"
-      className={styles.taskCheck}
+      className={
+        isTaskCrossedOut
+          ? styles["taskCheck-checked"]
+          : styles["taskCheck-not-checked"]
+      }
       onClick={handleCrossOutTask}
       {...props}
     />

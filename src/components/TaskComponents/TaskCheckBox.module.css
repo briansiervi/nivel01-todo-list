@@ -1,24 +1,23 @@
-.taskCheck {
+input[type="checkbox"] {
   appearance: none;
-  width: 2.4rem;
-  height: 2.4rem;
+  min-width: 2.4rem;
+  min-height: 2.4rem;
   border-radius: 50%;
   display: flex;
   align-items: center;
 }
 
-.taskCheck:not(:checked) {
+.taskCheck-not-checked {
   color: var(--blue);
   border: 0.25rem solid;
 }
 
-.taskCheck:checked::before {
+.taskCheck-checked::before {
   content: url("../../assets/Check.svg");
   display: flex;
-  height: 2.4rem;
 }
 
-.taskCheck:checked {
+.taskCheck-checked {
   background-color: var(--purple);
   border: 0;
   display: flex;

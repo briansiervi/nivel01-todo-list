@@ -2,6 +2,6 @@
   display: flex;
   flex: 1;
   color: var(--gray-300);
-  max-width: 2.4rem;
-  max-height: 2.4rem;
+  min-width: 2.4rem;
+  min-height: 2.4rem;
 }
