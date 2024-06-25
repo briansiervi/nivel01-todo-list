@@ -5,43 +5,44 @@ import { TaskLabel } from "./TaskLabel";
 import { TaskTrash } from "./TaskTrash";
 import { v4 as uuidv4 } from "uuid";
 
-export interface TaskProps {
-  id?: string;
+export interface TaskPropsWithoutEvents {
+  id: string;
   description: string;
+}
+
+interface TaskProps {
+  task: TaskPropsWithoutEvents;
+  onDeleteTask: (taskid: string) => void;
 }
 
 export function Task(props: TaskProps) {
   const [isTaskCrossedOut, setCrossOutTask] = useState(false);
-  const [isTaskDeleted, setDeleteTask] = useState(false);
 
   function crossOutTask() {
+    event?.preventDefault();
     setCrossOutTask(!isTaskCrossedOut);
   }
-
-  function deleteTask() {
-    console.log("deleteTask");
-    setDeleteTask(!isTaskDeleted);
-  }
-
-  const taskCheckBoxId = uuidv4();
 
   return (
     <div className={styles.line}>
       <div className={styles["inner-line"]}>
         <TaskCheckBox
-          id={taskCheckBoxId}
-          value={props.description}
+          key={uuidv4()}
+          id={props.task.id}
+          taskId={props.task.id}
+          value={props.task.id}
           onCrossOutTask={crossOutTask}
           isTaskCrossedOut={isTaskCrossedOut}
         />
         <TaskLabel
-          htmlFor={taskCheckBoxId}
-          id={props.id}
-          description={props.description}
+          key={uuidv4()}
+          taskid={props.task.id}
+          htmlFor={props.task.id}
+          description={props.task.description}
           onCrossOutTask={crossOutTask}
           isTaskCrossedOut={isTaskCrossedOut}
         />
-        <TaskTrash onDeleteTask={deleteTask} />
+        <TaskTrash taskid={props.task.id} onDeleteTask={props.onDeleteTask} />
       </div>
     </div>
   );

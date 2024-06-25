@@ -2,14 +2,14 @@ import { InputHTMLAttributes } from "react";
 import styles from "./TaskCheckBox.module.css";
 
 interface TaskCheckBoxProps extends InputHTMLAttributes<HTMLInputElement> {
-  id: string;
+  taskId: string;
   value: string;
   onCrossOutTask: () => void;
   isTaskCrossedOut: boolean;
 }
 
 export function TaskCheckBox({
-  id,
+  taskId,
   value,
   onCrossOutTask,
   isTaskCrossedOut,

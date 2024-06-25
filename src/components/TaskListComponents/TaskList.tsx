@@ -1,9 +1,10 @@
+import { useState } from "react";
 import styles from "./TaskList.module.css";
 import { TaskListBody } from "./TaskListBody";
 import { TaskListHeader } from "./TaskListHeader";
 
 export function TaskList() {
-  const tasks = [
+  const initialTasks = [
     {
       id: "task01",
       description:
@@ -21,10 +22,17 @@ export function TaskList() {
     },
   ];
 
+  const [tasks, setDeleteTask] = useState(initialTasks);
+
+  function deleteTask(taskid: string) {
+    const newTasks = tasks.filter((task) => task.id !== taskid);
+    setDeleteTask(newTasks);
+  }
+
   return (
     <div className={styles.taskList}>
       <TaskListHeader />
-      <TaskListBody tasks={tasks} />
+      <TaskListBody tasks={tasks} onDeleteTask={deleteTask} />
     </div>
   );
 }
