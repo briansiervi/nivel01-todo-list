@@ -2,11 +2,16 @@ import { NewTaskSearchButton } from "./NewTaskSearchButton";
 import { NewTaskSearchInput } from "./NewTaskSearchInput";
 import styles from "./NewTaskSearch.module.css";
 
-export function NewTaskSearch() {
+interface NewTaskSearchProps {
+  onBlur: (taskname: string) => void;
+  onClick: () => void;
+}
+
+export function NewTaskSearch({ onBlur, onClick }: NewTaskSearchProps) {
   return (
-    <div className={styles.newTaskSearch}>
-      <NewTaskSearchInput />
-      <NewTaskSearchButton />
-    </div>
+    <form className={styles.newTaskSearch}>
+      <NewTaskSearchInput onBlur={onBlur} />
+      <NewTaskSearchButton onClick={onClick} />
+    </form>
   );
 }
