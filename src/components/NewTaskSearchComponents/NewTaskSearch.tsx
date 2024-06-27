@@ -3,7 +3,7 @@ import { NewTaskSearchInput } from "./NewTaskSearchInput";
 import styles from "./NewTaskSearch.module.css";
 
 interface NewTaskSearchProps {
-  onBlur: (taskname: string) => void;
+  onBlur: (task: string) => void;
   onClick: () => void;
 }
 

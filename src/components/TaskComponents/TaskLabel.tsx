@@ -2,7 +2,7 @@ import { LabelHTMLAttributes } from "react";
 import styles from "./TaskLabel.module.css";
 
 interface TaskLabelProps extends LabelHTMLAttributes<HTMLLabelElement> {
-  taskid: string;
+  taskid: number;
   description: string;
   onCrossOutTask: () => void;
   isTaskCrossedOut: boolean;

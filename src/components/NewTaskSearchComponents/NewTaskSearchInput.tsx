@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 
 interface NewTaskSearchInputProps
   extends InputHTMLAttributes<HTMLInputElement> {
-  onBlur: (taskname: string) => void;
+  onBlur: (task: string) => void;
 }
 
 export function NewTaskSearchInput({

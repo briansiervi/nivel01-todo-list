@@ -3,8 +3,8 @@ import styles from "./TaskTrash.module.css";
 import { v4 as uuidv4 } from "uuid";
 
 interface TaskTrashProps {
-  taskid: string;
-  onDeleteTask: (taskId: string) => void;
+  taskid: number;
+  onDeleteTask: (taskId: number) => void;
 }
 
 export function TaskTrash(props: TaskTrashProps) {

@@ -1,10 +1,10 @@
-import { Task, TaskPropsWithoutEvents } from "../TaskComponents/Task";
+import { Task, TaskProps } from "../TaskComponents/Task";
 import styles from "./TaskListBody.module.css";
 import { v4 as uuidv4 } from "uuid";
 
 interface TaskListBodyProps {
-  tasks: TaskPropsWithoutEvents[];
-  onDeleteTask: (taskid: string) => void;
+  tasks: TaskProps[];
+  onDeleteTask: (taskid: number) => void;
 }
 
 export function TaskListBody({ tasks, onDeleteTask }: TaskListBodyProps) {
