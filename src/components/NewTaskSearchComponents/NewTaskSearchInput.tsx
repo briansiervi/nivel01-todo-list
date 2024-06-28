@@ -1,4 +1,4 @@
-import { InputHTMLAttributes, useState } from "react";
+import { InputHTMLAttributes } from "react";
 import styles from "./NewTaskSearchInput.module.css";
 import { v4 as uuidv4 } from "uuid";
 

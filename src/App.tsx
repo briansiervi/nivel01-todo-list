@@ -7,6 +7,11 @@ import { NewTaskSearch } from "./components/NewTaskSearchComponents/NewTaskSearc
 import { TaskProps } from "./components/TaskComponents/Task";
 
 export function App() {
+  const emptyTask: TaskProps = {
+    id: 0,
+    description: "",
+  };
+
   const initialTasks: TaskProps[] = [
     {
       id: 1,
@@ -26,7 +31,7 @@ export function App() {
   ];
 
   const [tasks, setTasks] = useState(initialTasks);
-  const [task, setNewTask] = useState(initialTasks[0]);
+  const [task, setNewTask] = useState(emptyTask);
 
   function newTempTask(taskName: string) {
     console.log("newTempTask");
@@ -42,7 +47,8 @@ export function App() {
 
   function newTask() {
     console.log("newTask");
-    const newTasks: TaskProps[] = tasks.push(task);
+    let newTasks = tasks;
+    newTasks.push(task);
     setTasks(newTasks);
   }
 

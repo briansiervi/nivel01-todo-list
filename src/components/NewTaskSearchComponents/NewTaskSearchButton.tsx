@@ -11,14 +11,9 @@ export function NewTaskSearchButton({ onClick }: NewTaskSearchButtonProps) {
   }
 
   return (
-    <a href="#" className={styles.button}>
+    <a href="#" className={styles.button} onClick={handleNewTask}>
       <span>Criar</span>
-      <PlusCircle
-        size={16}
-        className={styles.plusCircle}
-        weight="bold"
-        onClick={handleNewTask}
-      />
+      <PlusCircle size={16} className={styles.plusCircle} weight="bold" />
     </a>
   );
 }
