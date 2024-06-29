@@ -1,19 +1,11 @@
 import styles from "./NewTaskSearchButton.module.css";
 import { PlusCircle } from "phosphor-react";
 
-interface NewTaskSearchButtonProps {
-  onClick: () => void;
-}
-
-export function NewTaskSearchButton({ onClick }: NewTaskSearchButtonProps) {
-  function handleNewTask() {
-    onClick();
-  }
-
+export function NewTaskSearchButton() {
   return (
-    <a href="#" className={styles.button} onClick={handleNewTask}>
+    <button type="submit" className={styles.button}>
       <span>Criar</span>
       <PlusCircle size={16} className={styles.plusCircle} weight="bold" />
-    </a>
+    </button>
   );
 }

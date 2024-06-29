@@ -20,21 +20,21 @@ export function App() {
     },
     {
       id: 2,
-      description:
-        "Tarefa 02. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi ea ex non illum obcaecati explicabo? Cupiditate, animi vitae cum laudantium magnam incidunt neque facere eligendi ab! Itaque quis quas velit.",
+      description: "aaaaa",
     },
     {
       id: 3,
-      description:
-        "Tarefa 03. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi ea ex non illum obcaecati explicabo? Cupiditate, animi vitae cum laudantium magnam incidunt neque facere eligendi ab! Itaque quis quas velit.",
+      description: "bbbbb",
+    },
+    {
+      id: 4,
+      description: "ccccc",
     },
   ];
 
   const [tasks, setTasks] = useState(initialTasks);
-  const [task, setNewTask] = useState(emptyTask);
 
-  function newTempTask(taskName: string) {
-    console.log("newTempTask");
+  function createTask(taskName: string) {
     const id = tasks.length + 1;
 
     const newTask: TaskProps = {
@@ -42,13 +42,9 @@ export function App() {
       description: taskName,
     };
 
-    setNewTask(newTask);
-  }
+    const newTasks = [...tasks, newTask];
 
-  function newTask() {
-    console.log("newTask");
-    let newTasks = tasks;
-    newTasks.push(task);
+    // console.log(`newTasks: ${JSON.stringify(newTasks)}`);
     setTasks(newTasks);
   }
 
@@ -61,7 +57,7 @@ export function App() {
     <>
       <Header />
       <div className={styles.wrapper}>
-        <NewTaskSearch onBlur={newTempTask} onClick={newTask} />
+        <NewTaskSearch createTask={createTask} />
         <TaskList tasks={tasks} onDeleteTask={deleteTask} />
       </div>
     </>
