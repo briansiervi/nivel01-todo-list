@@ -1,8 +1,6 @@
-.text {
-  display: flex;
-  flex: 1;
+TaskLabel {
   font-size: var(--font-size-medium);
-  margin: 0 var(--font-size-small);
+  margin: 0 auto 0 var(--font-size-small);
 }
 
 .inner-line-crossed-out {

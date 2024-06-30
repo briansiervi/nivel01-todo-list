@@ -4,4 +4,7 @@
   color: var(--gray-300);
   min-width: 2.4rem;
   min-height: 2.4rem;
+  max-width: fit-content;
+  max-height: fit-content;
+  margin-left: auto;
 }
