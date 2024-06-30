@@ -10,8 +10,7 @@ export function NewTaskSearchInput({
       key={uuidv4()}
       id={uuidv4()}
       className={styles.newTaskInput}
-      placeholder="Adicione uma nova tarefa"
-      {...props}
+      placeholder={props.placeholder}
     />
   );
 }

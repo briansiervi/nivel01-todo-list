@@ -11,7 +11,7 @@ interface TaskListProps {
 export function TaskList({ tasks, onDeleteTask }: TaskListProps) {
   return (
     <div className={styles.taskList}>
-      <TaskListHeader />
+      <TaskListHeader tasks={tasks} />
       <TaskListBody tasks={tasks} onDeleteTask={onDeleteTask} />
     </div>
   );

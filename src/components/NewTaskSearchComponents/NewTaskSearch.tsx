@@ -18,8 +18,11 @@ export function NewTaskSearch({ createTask }: NewTaskSearchProps) {
       onSubmit={(event) => handleCreateNewTask(event)}
       className={styles.newTaskSearch}
     >
-      <NewTaskSearchInput name="taskSearchInput" />
-      <NewTaskSearchButton />
+      <NewTaskSearchInput
+        name="taskSearchInput"
+        placeholder="Adicione uma nova tarefa"
+      />
+      <NewTaskSearchButton text="Criar" />
     </form>
   );
 }

@@ -8,6 +8,7 @@ import { v4 as uuidv4 } from "uuid";
 export interface TaskProps {
   id: number;
   description: string;
+  checked: boolean;
 }
 
 interface InternalTaskProps {
