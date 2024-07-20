@@ -2,7 +2,7 @@ import { LabelHTMLAttributes } from "react";
 import styles from "./TaskLabel.module.css";
 
 interface TaskLabelProps extends LabelHTMLAttributes<HTMLLabelElement> {
-  taskid: number;
+  taskId: number;
   description: string;
   onCrossOutTask: () => void;
   isTaskCrossedOut: boolean;
@@ -10,22 +10,27 @@ interface TaskLabelProps extends LabelHTMLAttributes<HTMLLabelElement> {
 }
 
 export function TaskLabel({
+  taskId,
   description,
   onCrossOutTask,
   isTaskCrossedOut,
   htmlFor,
-  ...props
+  ...rest
 }: TaskLabelProps) {
-  function handleCrossOutTask() {
+  function handleCrossOutTask(
+    event: React.MouseEvent<HTMLLabelElement, MouseEvent>
+  ) {
+    event?.preventDefault();
+    console.log(`TaskLabel handleCrossOutTask: ${taskId}`);
     onCrossOutTask();
   }
 
   return (
     <label
       className={isTaskCrossedOut ? styles["inner-line-crossed-out"] : ""}
-      onClick={handleCrossOutTask}
+      onClick={(event) => handleCrossOutTask(event)}
       htmlFor={htmlFor}
-      {...props}
+      {...rest}
     >
       {description}
     </label>

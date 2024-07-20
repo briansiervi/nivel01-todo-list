@@ -4,14 +4,26 @@ import { v4 as uuidv4 } from "uuid";
 
 interface TaskListBodyProps {
   tasks: TaskProps[];
-  onDeleteTask: (taskid: number) => void;
+  onDeleteTask: (taskId: number) => void;
+  onCrossOutTask: (taskId: number) => void;
 }
 
-export function TaskListBody({ tasks, onDeleteTask }: TaskListBodyProps) {
+export function TaskListBody({
+  tasks,
+  onDeleteTask,
+  onCrossOutTask,
+}: TaskListBodyProps) {
   return (
     <div className={styles.line}>
       {tasks.map((task) => {
-        return <Task key={uuidv4()} task={task} onDeleteTask={onDeleteTask} />;
+        return (
+          <Task
+            key={uuidv4()}
+            task={task}
+            onDeleteTask={onDeleteTask}
+            onCrossOutTask={onCrossOutTask}
+          />
+        );
       })}
     </div>
   );

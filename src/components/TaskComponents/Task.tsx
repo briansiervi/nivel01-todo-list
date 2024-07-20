@@ -1,4 +1,3 @@
-import { useState } from "react";
 import styles from "./Task.module.css";
 import { TaskCheckBox } from "./TaskCheckBox";
 import { TaskLabel } from "./TaskLabel";
@@ -9,21 +8,16 @@ export interface TaskProps {
   id: number;
   description: string;
   checked: boolean;
+  isTaskCrossedOut: boolean;
 }
 
 interface InternalTaskProps {
   task: TaskProps;
-  onDeleteTask: (taskid: number) => void;
+  onDeleteTask: (taskId: number) => void;
+  onCrossOutTask: (taskId: number) => void;
 }
 
 export function Task(props: InternalTaskProps) {
-  const [isTaskCrossedOut, setCrossOutTask] = useState(false);
-
-  function crossOutTask() {
-    event?.preventDefault();
-    setCrossOutTask(!isTaskCrossedOut);
-  }
-
   return (
     <div className={styles.line}>
       <div className={styles["inner-line"]}>
@@ -32,18 +26,18 @@ export function Task(props: InternalTaskProps) {
           id={props.task.id.toString()}
           taskId={props.task.id}
           value={props.task.id.toString()}
-          onCrossOutTask={crossOutTask}
-          isTaskCrossedOut={isTaskCrossedOut}
+          onCrossOutTask={() => props.onCrossOutTask(props.task.id)}
+          isTaskCrossedOut={props.task.isTaskCrossedOut}
         />
         <TaskLabel
           key={uuidv4()}
-          taskid={props.task.id}
+          taskId={props.task.id}
           htmlFor={props.task.id.toString()}
           description={props.task.description}
-          onCrossOutTask={crossOutTask}
-          isTaskCrossedOut={isTaskCrossedOut}
+          onCrossOutTask={() => props.onCrossOutTask(props.task.id)}
+          isTaskCrossedOut={props.task.isTaskCrossedOut}
         />
-        <TaskTrash taskid={props.task.id} onDeleteTask={props.onDeleteTask} />
+        <TaskTrash taskId={props.task.id} onDeleteTask={props.onDeleteTask} />
       </div>
     </div>
   );

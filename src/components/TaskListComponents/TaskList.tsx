@@ -5,14 +5,23 @@ import { TaskProps } from "../TaskComponents/Task";
 
 interface TaskListProps {
   tasks: TaskProps[];
-  onDeleteTask: (taskid: number) => void;
+  onDeleteTask: (taskId: number) => void;
+  onCrossOutTask: (taskId: number) => void;
 }
 
-export function TaskList({ tasks, onDeleteTask }: TaskListProps) {
+export function TaskList({
+  tasks,
+  onDeleteTask,
+  onCrossOutTask,
+}: TaskListProps) {
   return (
     <div className={styles.taskList}>
       <TaskListHeader tasks={tasks} />
-      <TaskListBody tasks={tasks} onDeleteTask={onDeleteTask} />
+      <TaskListBody
+        tasks={tasks}
+        onDeleteTask={onDeleteTask}
+        onCrossOutTask={onCrossOutTask}
+      />
     </div>
   );
 }

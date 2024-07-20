@@ -16,6 +16,7 @@ export function TaskCheckBox({
   ...props
 }: TaskCheckBoxProps) {
   function handleCrossOutTask() {
+    console.log(`TaskCheckbox handleCrossOutTask: ${taskId}`);
     onCrossOutTask();
   }
 

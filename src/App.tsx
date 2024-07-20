@@ -11,6 +11,7 @@ export function App() {
     id: 0,
     description: "",
     checked: false,
+    isTaskCrossedOut: false,
   };
 
   const initialTasks: TaskProps[] = [
@@ -19,21 +20,25 @@ export function App() {
       description:
         "Tarefa 01. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi ea ex non illum obcaecati explicabo? Cupiditate, animi vitae cum laudantium magnam incidunt neque facere eligendi ab! Itaque quis quas velit.",
       checked: false,
+      isTaskCrossedOut: false,
     },
     {
       id: 2,
       description: "aaaaa",
       checked: false,
+      isTaskCrossedOut: false,
     },
     {
       id: 3,
       description: "bbbbb",
       checked: false,
+      isTaskCrossedOut: false,
     },
     {
       id: 4,
       description: "ccccc",
       checked: false,
+      isTaskCrossedOut: false,
     },
   ];
 
@@ -46,17 +51,22 @@ export function App() {
       id: id,
       description: taskName,
       checked: false,
+      isTaskCrossedOut: false,
     };
 
     const newTasks = [...tasks, newTask];
 
-    // console.log(`newTasks: ${JSON.stringify(newTasks)}`);
+    console.log(`newTasks: ${JSON.stringify(newTasks)}`);
     setTasks(newTasks);
   }
 
-  function deleteTask(taskid: number) {
-    const newTasks = tasks.filter((task) => task.id !== taskid);
+  function deleteTask(taskId: number) {
+    const newTasks = tasks.filter((task) => task.id !== taskId);
     setTasks(newTasks);
+  }
+
+  function crossOutTask(taskId: number) {
+    console.log(`crossOutTask: ${taskId}`);
   }
 
   return (
@@ -64,7 +74,11 @@ export function App() {
       <Header />
       <div className={styles.wrapper}>
         <NewTaskSearch createTask={createTask} />
-        <TaskList tasks={tasks} onDeleteTask={deleteTask} />
+        <TaskList
+          tasks={tasks}
+          onDeleteTask={deleteTask}
+          onCrossOutTask={crossOutTask}
+        />
       </div>
     </>
   );
