@@ -42,9 +42,26 @@ export function App() {
     },
   ];
 
-  const [tasks, setTasks] = useState(initialTasks);
+  let tasks: TaskProps[] = initialTasks;
+  function setTasks(tasks: TaskProps[]) {
+    console.log(`setSearchedTask ${tasks}`);
+  }
+
+  let searchedTask: string = "";
+  function setSearchedTask(taskName: String) {
+    console.log(`setSearchedTask ${taskName}`);
+  }
+
+  // const [tasks, setTasks] = useState(initialTasks);
+  // const [searchedTask, setSearchedTask] = useState("");
+
+  function createSearchedTask(taskName: string) {
+    console.log(`createSearchedTask ${taskName}`);
+    setSearchedTask(taskName);
+  }
 
   function createTask(taskName: string) {
+    console.log(`createTask ${taskName}`);
     const id = tasks.length + 1;
 
     const newTask: TaskProps = {
@@ -56,11 +73,13 @@ export function App() {
 
     const newTasks = [...tasks, newTask];
 
-    console.log(`newTasks: ${JSON.stringify(newTasks)}`);
+    console.log(`newTasks: ${JSON.stringify(newTask)}`);
+    setSearchedTask("");
     setTasks(newTasks);
   }
 
   function deleteTask(taskId: number) {
+    console.log(`deleteTask ${taskId}`);
     const newTasks = tasks.filter((task) => task.id !== taskId);
     setTasks(newTasks);
   }
@@ -73,7 +92,11 @@ export function App() {
     <>
       <Header />
       <div className={styles.wrapper}>
-        <NewTaskSearch createTask={createTask} />
+        <NewTaskSearch
+          searchedTask={searchedTask}
+          inputOnChange={createSearchedTask}
+          createTask={createTask}
+        />
         <TaskList
           tasks={tasks}
           onDeleteTask={deleteTask}
