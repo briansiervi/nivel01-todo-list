@@ -5,34 +5,25 @@ import { PlusCircle } from "phosphor-react";
 
 interface NewTaskSearchProps {
   searchedTask: string;
-  inputOnChange: (taskName: string) => void;
-  createTask: (taskName: string) => void;
+  onChangeTask: (taskName: string) => void;
+  onCreateTask: (taskName: string) => void;
 }
 
 export function NewTaskSearch({
   searchedTask,
-  inputOnChange,
-  createTask,
+  onChangeTask,
+  onCreateTask,
 }: NewTaskSearchProps) {
   function handleFormSubmit(event: React.FormEvent) {
     event?.preventDefault();
-    console.log(`handleFormSubmit ${event.target.value}`);
-    createTask(event.target.value);
+    // console.log(`${handleFormSubmit.name} ${searchedTask}`);
+    onCreateTask(searchedTask);
   }
 
   function handleTypedTask(event: ChangeEvent<HTMLInputElement>) {
-    console.log(`handleTypedTask ${event.target.value}`);
-    inputOnChange(event.target.value);
+    // console.log(`${handleFormSubmit.name} ${event.target.value}`);
+    onChangeTask(event.target.value);
   }
-
-  // const [newSearchInputOnBlur, setNewSearchInputOnBlur] = useState("");
-
-  // function handleNewSearchInputOnChange(
-  //   event: React.FormEvent<HTMLInputElement>
-  // ) {
-  //   console.log(event.target.value);
-  //   setNewSearchInputOnBlur(event.target.value);
-  // }
 
   return (
     <form
@@ -40,13 +31,11 @@ export function NewTaskSearch({
       className={styles.newTaskSearch}
     >
       <input
-        key={uuidv4()}
         id={uuidv4()}
         className={styles.newTaskInput}
         placeholder="Adicione uma nova tarefa"
         onChange={(event) => handleTypedTask(event)}
         value={searchedTask}
-        // onBlurCapture={(event) => handleNewSearchInputOnChange(event)}
       />
 
       <button
