@@ -16,12 +16,10 @@ export function NewTaskSearch({
 }: NewTaskSearchProps) {
   function handleFormSubmit(event: React.FormEvent) {
     event?.preventDefault();
-    // console.log(`${handleFormSubmit.name} ${searchedTask}`);
     onCreateTask(searchedTask);
   }
 
   function handleTypedTask(event: ChangeEvent<HTMLInputElement>) {
-    // console.log(`${handleFormSubmit.name} ${event.target.value}`);
     onChangeTask(event.target.value);
   }
 
@@ -41,7 +39,7 @@ export function NewTaskSearch({
       <button
         type="submit"
         className={styles.button}
-        // disabled={newSearchInputOnBlur.length === 0}
+        disabled={searchedTask.length === 0}
       >
         <span>Criar</span>
         <PlusCircle size={16} className={styles.plusCircle} weight="bold" />

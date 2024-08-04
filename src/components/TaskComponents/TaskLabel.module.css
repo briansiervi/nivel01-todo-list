@@ -3,6 +3,6 @@ TaskLabel {
   margin: 0 auto 0 var(--font-size-small);
 }
 
-.inner-line-crossed-out {
+.inner-line-checked {
   text-decoration: line-through;
 }

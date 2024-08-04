@@ -53,8 +53,7 @@
 }
 
 .button:disabled {
-  /* opacity: 0.9; */
-  background: red;
+  opacity: 0.9;
 }
 
 .button:not(:disabled):hover {

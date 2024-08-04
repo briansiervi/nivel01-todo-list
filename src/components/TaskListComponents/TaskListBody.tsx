@@ -15,16 +15,18 @@ export function TaskListBody({
 }: TaskListBodyProps) {
   return (
     <div className={styles.line}>
-      {tasks.map((task) => {
-        return (
-          <Task
-            key={uuidv4()}
-            task={task}
-            onDeleteTask={onDeleteTask}
-            onCrossOutTask={onCrossOutTask}
-          />
-        );
-      })}
+      {tasks
+        .sort((x) => x.id)
+        .map((task) => {
+          return (
+            <Task
+              key={uuidv4()}
+              task={task}
+              onDeleteTask={onDeleteTask}
+              onCrossOutTask={onCrossOutTask}
+            />
+          );
+        })}
     </div>
   );
 }

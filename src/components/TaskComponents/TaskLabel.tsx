@@ -5,7 +5,7 @@ interface TaskLabelProps extends LabelHTMLAttributes<HTMLLabelElement> {
   taskId: number;
   description: string;
   onCrossOutTask: () => void;
-  isTaskCrossedOut: boolean;
+  checked: boolean;
   htmlFor: string;
 }
 
@@ -13,7 +13,7 @@ export function TaskLabel({
   taskId,
   description,
   onCrossOutTask,
-  isTaskCrossedOut,
+  checked,
   htmlFor,
   ...rest
 }: TaskLabelProps) {
@@ -21,13 +21,12 @@ export function TaskLabel({
     event: React.MouseEvent<HTMLLabelElement, MouseEvent>
   ) {
     event?.preventDefault();
-    console.log(`TaskLabel handleCrossOutTask: ${taskId}`);
     onCrossOutTask();
   }
 
   return (
     <label
-      className={isTaskCrossedOut ? styles["inner-line-crossed-out"] : ""}
+      className={checked ? styles["inner-line-checked"] : ""}
       onClick={(event) => handleCrossOutTask(event)}
       htmlFor={htmlFor}
       {...rest}

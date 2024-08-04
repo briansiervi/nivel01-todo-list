@@ -8,7 +8,6 @@ export interface TaskProps {
   id: number;
   description: string;
   checked: boolean;
-  isTaskCrossedOut: boolean;
 }
 
 interface InternalTaskProps {
@@ -27,7 +26,7 @@ export function Task(props: InternalTaskProps) {
           taskId={props.task.id}
           value={props.task.id.toString()}
           onCrossOutTask={() => props.onCrossOutTask(props.task.id)}
-          isTaskCrossedOut={props.task.isTaskCrossedOut}
+          checked={props.task.checked}
         />
         <TaskLabel
           key={uuidv4()}
@@ -35,7 +34,7 @@ export function Task(props: InternalTaskProps) {
           htmlFor={props.task.id.toString()}
           description={props.task.description}
           onCrossOutTask={() => props.onCrossOutTask(props.task.id)}
-          isTaskCrossedOut={props.task.isTaskCrossedOut}
+          checked={props.task.checked}
         />
         <TaskTrash taskId={props.task.id} onDeleteTask={props.onDeleteTask} />
       </div>
