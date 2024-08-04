@@ -22,6 +22,10 @@ export function TaskListTitle(props: TaskTitleProps) {
         <button>
           <span>{props.totalNumber}</span>
         </button>
+      ) : props.totalNumber === 0 ? (
+        <button>
+          <span>{props.totalNumber}</span>
+        </button>
       ) : (
         <button>
           <span>{props.currentNumber}</span>
