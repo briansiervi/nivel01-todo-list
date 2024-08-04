@@ -7,33 +7,32 @@ import { NewTaskSearch } from "./components/NewTaskSearchComponents/NewTaskSearc
 import { TaskProps } from "./components/TaskComponents/Task";
 
 export function App() {
-  const emptyTasks: TaskProps = [];
+  const initialTasks: TaskProps[] = [];
 
   // const initialTasks: TaskProps[] = [
   //   {
   //     id: 1,
-  //     description:
-  //       "Tarefa 01. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi ea ex non illum obcaecati explicabo? Cupiditate, animi vitae cum laudantium magnam incidunt neque facere eligendi ab! Itaque quis quas velit.",
-  //     checked: false,
-  //   },
-  //   {
-  //     id: 2,
   //     description: "aaaaa",
   //     checked: false,
   //   },
   //   {
-  //     id: 3,
+  //     id: 2,
   //     description: "bbbbb",
   //     checked: false,
   //   },
   //   {
-  //     id: 4,
+  //     id: 3,
   //     description: "ccccc",
+  //     checked: false,
+  //   },
+  //   {
+  //     id: 4,
+  //     description: "ddddd",
   //     checked: false,
   //   },
   // ];
 
-  const [tasks, setTasks] = useState(emptyTasks);
+  const [tasks, setTasks] = useState(initialTasks);
   const [searchedTask, setSearchedTask] = useState("");
 
   function onChangeTask(taskName: string) {
