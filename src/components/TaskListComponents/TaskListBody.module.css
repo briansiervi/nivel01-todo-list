@@ -1,8 +1,30 @@
-.line {
+div.taskList {
+  gap: 1.2rem 0;
   display: flex;
   flex: 1;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 1.2rem 0;
+}
+
+div.emptyList {
+  display: flex;
+  color: var(--gray-300);
+  flex-wrap: wrap;
+  font-size: var(--font-size-large);
+  justify-content: center;
+  margin-top: 5.6rem;
+}
+
+p.emptyListTitle {
+  display: flex;
+  min-width: 100%;
+  justify-content: center;
+  font-weight: bold;
+}
+
+p.emptyListBody {
+  display: flex;
+  min-width: 100%;
+  justify-content: center;
 }

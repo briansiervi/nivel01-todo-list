@@ -5,4 +5,5 @@ TaskLabel {
 
 .inner-line-checked {
   text-decoration: line-through;
+  color: var(--gray-300);
 }
